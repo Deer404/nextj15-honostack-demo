@@ -7,7 +7,7 @@ const Layout = ({ children }: React.PropsWithChildren) => (
   </div>
 );
 export default async function Home() {
-  const res = await client.api.hello.$get({
+  const res = await client.api.authors.$get({
     query: {
       name: "home",
     },

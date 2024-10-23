@@ -15,11 +15,7 @@ export default function Home() {
   const query = useQuery({
     queryKey: ["query"],
     queryFn: async () => {
-      const res = await client.api.hello.$get({
-        query: {
-          name: "hono",
-        },
-      });
+      const res = await client.api.books.$get();
       return await res.json();
     },
   });
@@ -28,7 +24,7 @@ export default function Home() {
   }
   return (
     <Layout>
-      <span>{query.data?.message}</span>
+      <span>{query.data?.result}</span>
     </Layout>
   );
 }
